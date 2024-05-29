@@ -8,9 +8,9 @@ function MainNav() {
                 const element = document.getElementById(id)
                 element?.scrollIntoView({behavior: "smooth"})
             }}>
-                <li className="vibrate"><a href="#home">Home</a></li>
-                <li className="vibrate"><a href="#projects">Projects</a></li>
-                <li className="vibrate">Contact</li>
+                
+                <li className="vibrate  text-slate-800"><a href="#projects">Projects</a></li>
+                <li className="vibrate text-slate-800"><a href="#contact">Contact</a></li>
             </ul>
         </header>
     )
