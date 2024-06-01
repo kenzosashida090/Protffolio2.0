@@ -7,14 +7,19 @@ ProjectItem.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     hasPage:PropTypes.string,
-    codeLink:PropTypes.string
+    codeLink:PropTypes.string,
+    path:PropTypes.string
 }
 
-function ProjectItem({title,description,hasPage="",codeLink}) {
+function ProjectItem({title,description,hasPage="",codeLink, path}) {
   return (
-    <div  className="flex items-center bg-slate-200 justify-center flex-col space-y-7 p-3 sm:p1">
-      <div className="relative text-center flex items-center justify-center group overflow-hidden">
-        <img className="h-30 hover:blur-sm  " src="../../hotel.jpg" alt="hotel" />
+    <div  className="flex items-center bg-slate-300 dark:bg-slate-900 justify-center max-w-screen-md mx-auto p-2 rounded-2xl">
+      <img className="h-20 w-20 rounded-2xl " src={`../../${path}`} alt="hotel" />
+      <div className="sm:w-72 h-24 md:w-96 flex flex-col items-start px-5 text-left justify-center">
+      <h3 className="text-xl text-slate-800 dark:text-stone-400 font-semibold ">{title}</h3>
+      <p className="text-sm text-slate-800 dark:text-stone-400">{description}</p>
+      </div>
+      {/* <div className="relative text-center flex items-center justify-center group overflow-hidden">
           <div className="absolute flex flex-col justify-center items-center left-0 top-[-100%] opacity-0 group-hover:opacity-100 group-hover:top-[0] p-4 w-full h-full bg-black/60 group-hover:backdrop-blur-sm duration-500 "> 
             <Slide cascade>
               <p className=" text-slate-50 text-2xl" >{title}</p>
@@ -40,7 +45,8 @@ function ProjectItem({title,description,hasPage="",codeLink}) {
                 </Fade>
             </Slide>
           </div>
-        </div>
+        </div> */}
+         
     </div>
     )
 }
