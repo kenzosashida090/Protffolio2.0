@@ -9,7 +9,7 @@ import { IoLogoElectron } from "react-icons/io5";
 import { SiStyledcomponents } from "react-icons/si";
 import { FaDocker } from "react-icons/fa";
 import { DiMongodb } from "react-icons/di";
-import { Link } from "react-router-dom";
+
 
 const Resume =  ()=> {
     return (
