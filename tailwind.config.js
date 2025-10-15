@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily:{sans:'Roboto Mono, monospace'},
+    fontFamily:{
+       'sans': ['ui-sans-serif', 'system-ui', /* ... */],
+      'serif': ['ui-serif', 'Georgia', /* ... */],
+      'mono': ['ui-monospace', 'SFMono-Regular', /* ... */],
+      'custom': ['"Open Sans"', 'sans-serif'], // Custom font
+      'another': 'Roboto, Arial, sans-serif' // Comma-delimited string
+
+    },
     extend: {},
   },
   plugins: [],

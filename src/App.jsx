@@ -1,19 +1,21 @@
-import Contact from "./components/Contact"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import Home from "./components/Home"
-import MainNav from "./components/MainNav"
-import Projects from "./components/Projects"
-import { DarkModeProvider } from "./context/DarkModeContext"
 
+import { DarkModeProvider } from "./context/DarkModeContext"
+import AppLayout from "./components/AppLayout"
+import Resume from "./components/Resume"
 
 function App() {
   return (
     <DarkModeProvider>
-      <main className="overflow-y-hidden">
-        <MainNav/>
-        <Home/>
-        <Projects/>
-        <Contact/>
-      </main>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AppLayout/>}>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/resume" element={<Resume/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </DarkModeProvider>
   )
 }
