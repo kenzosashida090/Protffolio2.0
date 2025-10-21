@@ -1,6 +1,4 @@
-import { Fade, Slide } from "react-awesome-reveal"
-import { FiEye } from "react-icons/fi"
-import { IoCodeSlashOutline } from "react-icons/io5"
+
 import PropTypes from 'prop-types';
 
 ProjectItem.propTypes = {
@@ -11,7 +9,7 @@ ProjectItem.propTypes = {
     path:PropTypes.string
 }
 
-function ProjectItem({title,description,hasPage="",codeLink, path}) {
+function ProjectItem({title,description, path}) {
   return (
     <div  className="flex items-center bg-slate-300 dark:bg-slate-900 justify-center max-w-screen-md mx-auto p-2 rounded-2xl">
       <img className="h-20 w-20 rounded-2xl " src={`../../${path}`} alt="hotel" />
