@@ -25,6 +25,7 @@ function Home() {
                 </h1>
                 <div className='max-w-[50rem] md:mt-4'>
                 <div className=" flex items-center justify-center">
+                  
                 <ThreeModel/>
                   <p className='px-3 text-slate-700  dark:text-stone-400 font-custom text-xl/9'>
                     A full-stack developer with a passion for creating engaging user experiences.

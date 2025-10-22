@@ -60,9 +60,7 @@ const ThreeModel = () => {
       (error) => console.error("Error loading model:", error)
     );
 
-    // === Controles de cámara ===
 
-    // === Loop de render ===
     const animate = () => {
       requestAnimationFrame(animate);
         const delta = clock.getDelta();
@@ -70,29 +68,30 @@ const ThreeModel = () => {
       if (pivot) {
         pivot.rotation.y += direction * delta * speed;
 
-        // Cuando llega al límite, invierte la dirección
         if (pivot.rotation.y > maxAngle) direction = -1;
         if (pivot.rotation.y < -maxAngle) direction = 1;
       }
       renderer.render(scene, camera);
     };
 animate()
-    // === Ajuste de tamaño al redimensionar ===
     const handleResize = () => {
-      camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+        if(mountRef.current){
+
+            camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+        }
     };
     window.addEventListener("resize", handleResize);
 
     return () => {
-      mountRef.current.removeChild(renderer.domElement);
+      mountRef?.current?.removeChild(renderer.domElement);
       window.removeEventListener("resize", handleResize);
       renderer.dispose();
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: "100%", height: "20vh" }} />;
+  return <div className="hidden md:block" ref={mountRef} style={{ width: "100%", height: "20vh" }} />;
 };
 
 export default ThreeModel;
