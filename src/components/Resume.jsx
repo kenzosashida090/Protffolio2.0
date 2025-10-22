@@ -10,6 +10,7 @@ import { SiStyledcomponents } from "react-icons/si";
 import { FaDocker } from "react-icons/fa";
 import { DiMongodb } from "react-icons/di";
 import JobDetail from "./JobDetail";
+import { motion } from "motion/react";
 const activitiesEnd = [
   "Developed fully responsive interfaces adaptable to all screen sizes.",
   "Implemented comprehensive unit tests to ensure code reliability and maintainability.",
@@ -27,7 +28,12 @@ const activitiesUniversal = [
 
 const Resume =  ()=> {
     return (
-         <section id='resume' className=' flex gap-11 space-y-24  md:px-10 justify-center min-h-[85vh] transition-colors duration-500 ease-in-out mx-auto '>
+         <motion.section
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ type: "spring", stiffness:40, damping: 14, mass: 1.2 }}
+                  id='resume' 
+                  className=' flex gap-11 space-y-24  md:px-10 justify-center min-h-[85vh] transition-colors duration-500 ease-in-out mx-auto '>
                         <div className="flex flex-col gap-4 mx-auto max-w-md md:max-w-4xl  px-10 md:px-4">
                         <h1 className="sm:text-7xl text-5xl text-center  font-sans font-bold ">
                             My Resume/CV
@@ -128,7 +134,7 @@ const Resume =  ()=> {
                             </div>
                         </div>
                         
-                      </section>
+                      </motion.section>
     )
 }
 

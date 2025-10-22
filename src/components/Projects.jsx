@@ -1,10 +1,11 @@
 
+import { motion } from "motion/react";
 import ProjectItem from "./ProjectItem";
 
 const projects = [
   {
     title: "React Hotel Project",
-    description:"React Hotel is a small boutique hotel with 8 luxurious wooden cabains.",
+    description:"React Hotel is a web application designed to manage hotel operations efficiently.It includes an admin dashboard where employees can create, update, and delete cabins (rooms), as well as manage bookings.",
     codeLink:"https://github.com/kenzosashida090/React-Hotel",
     hasPage: "https://sashida-hotel.netlify.app",
     path:"hotel.jpg"
@@ -28,16 +29,60 @@ const projects = [
     codeLink:"https://github.com/kenzosashida090/WorldWiseProject",
     path:"map.jpg"
   },
+  {
+    title: "Markdown MD Project",
+    description:"Visualize all your travels into the web app WorldWise with an interactive map.",
+    codeLink:"https://github.com/kenzosashida090/WorldWiseProject",
+    path:"markdown-icon.jpg"
+  },
+  {
+    title: "REST API Stripe",
+    description:"This a RESTful API which involves payment methods, subscriptions and authentication using Stripe. Users also can request a refund. This project was design to serve a Doctors appointemnt",
+    codeLink:"https://github.com/kenzosashida090/WorldWiseProject",
+    path:"api.png"
+  },
+
 ]
+
 function Projects() {
 
     return (
-        <section id="projects" className="min-h-screen text-center dark:bg-slate-800 transition-colors duration-500 ease-in-out ">
-          <h1 className="text-5xl vibrate dark:text-stone-400 mb-20">Projects</h1>
-            <div className=" grid grid-cols-[1fr] gap-x-0 gap-y-4 mx-auto  dark:bg-slate-800  px-3 " >
-              {projects.map((el)=><ProjectItem title={el.title} description={el.description} codeLink={el.codeLink} hasPage={el?.hasPage} key={el.title} path={el.path} />)}
-            </div>
-        </section>
+<motion.section
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ type: "spring", stiffness: 40, damping: 14, mass: 1.2 }}
+  id="projects"
+  className="dark:bg-slate-800"
+>
+  <h1 className="sm:text-7xl text-5xl font-sans font-bold mb-8 text-center">
+    Projects
+  </h1>
+
+  <div
+    className="
+      grid 
+      grid-cols-3
+     
+      auto-rows-min
+      gap-8
+      p-8
+      place-items-center
+    "
+  >
+   
+
+    {projects.map(el => (
+      <ProjectItem
+        key={el.title}
+        title={el.title}
+        description={el.description}
+        codeLink={el.codeLink}
+        hasPage={el?.hasPage}
+        path={el.path}
+      />
+    ))}
+  </div>
+</motion.section>
     )
 }
 

@@ -5,17 +5,24 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { NavLink } from "react-router-dom";
 
+        
 
 function MainNav() {
        const [isVisible, setIsVisible] = useState(false)
     return (
-<header className="flex  justify-around md:justify-between items-center text-center bg-slate-200 md:px-10 max-h-24 dark:bg-slate-800  ">
+<header className="flex  justify-around md:justify-between items-center text-center bg-slate-300 md:px-10 max-h-24 dark:bg-slate-800  ">
     <div className="flex items-center space-x-20 text-2xl my-10 mr-5" >
         <p className=" text-slate-800 dark:text-slate-50"><NavLink to="/">KSDev.</NavLink></p>
     </div>
     <div className="flex items-center lg:space-x-20 text-xl my-10 space-x-4  transition-all duration-1300 ease-in-out  justify-end" >
-        <p className=" text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block"><NavLink to="/resume">RESUME</NavLink></p>
-        <p className=" text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block"><NavLink to="/resume">PROJECTS</NavLink></p>
+        <p className=" text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block">
+            
+            <NavLink  className={({ isActive }) => (isActive ? 'text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block underline underline-offset-8 transition-all duration-1300 ease-in-out' : 'text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block ')} to="/resume">RESUME</NavLink>
+            
+            </p>
+        <p className=" text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block">
+            <NavLink  className={({ isActive }) => (isActive ? 'text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block underline underline-offset-8 transition-all duration-1300 ease-in-out' : 'text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block ')} to="/projects">PROJECTS</NavLink>
+        </p>
         <span className={` pt-2  ${isVisible ? 'hidden' : 'block'  }`}><DarkModeToggle/></span>
         <div className="flex space-x-2 z-[99999]">
  <motion.button

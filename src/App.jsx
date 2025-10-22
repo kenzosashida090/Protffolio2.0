@@ -4,7 +4,7 @@ import Home from "./components/Home"
 import { DarkModeProvider } from "./context/DarkModeContext"
 import AppLayout from "./components/AppLayout"
 import Resume from "./components/Resume"
-
+import Projects from "./components/Projects"
 function App() {
   return (
     <DarkModeProvider>
@@ -13,6 +13,7 @@ function App() {
           <Route element={<AppLayout/>}>
             <Route path="/" element={<Home/>}/>
             <Route path="/resume" element={<Resume/>}/>
+            <Route path="/projects" element={<Projects/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
