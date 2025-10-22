@@ -5,6 +5,7 @@ import { FaRegFilePdf } from "react-icons/fa6";
 import { CiLinkedin } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
+import ThreeModel from "./ThreeModel";
 
 function Home() {
   const onButtonClick = () => {
@@ -23,14 +24,17 @@ function Home() {
                   Hi!, I&apos;m <span className='font-bold sm:text-7xl text-6xl text-orange-600 '>Kenzo</span>.
                 </h1>
                 <div className='max-w-[50rem] md:mt-4'>
+                <div className=" flex items-center justify-center">
+                <ThreeModel/>
                   <p className='px-3 text-slate-700  dark:text-stone-400 font-custom text-xl/9'>
                     A full-stack developer with a passion for creating engaging user experiences.
     
                     I specialize in building intuitive, user-friendly applications using React ecosystem. Currently, I&apos;m leading the front-end team at <span className="font-semibold">@EndToEndManagment</span>.
                   </p>
+                  </div>
                 </div>
           
-                <div className="border-2 w-72 border-indigo-200/20  mt-2 ml-2  "></div>
+                <div className="border-2  dark:border-indigo-200/20 flex border-indigo-500/40 mt-2 ml-2 items-end justify-end "></div>
 
                 <div className="pt-4 px-2 flex-col space-y-2">
                   <h1 className="font-semibold text-slate-700 text-xl dark:text-stone-400">Find me on</h1>
@@ -50,7 +54,6 @@ function Home() {
                   <p className="md:text-xl/9 text-sm/7">You can find me out anytime at <span className="font-semibold">kenzosashida5@gmail.com</span></p>
                 </div>
                 </div>
-                
               </section>
     )
 }

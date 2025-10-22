@@ -10,23 +10,12 @@ function MainNav() {
        const [isVisible, setIsVisible] = useState(false)
     return (
 <header className="flex  justify-around md:justify-between items-center text-center bg-slate-200 md:px-10 max-h-24 dark:bg-slate-800  ">
-    <div className="flex items-center space-x-20 text-2xl my-10 mr-5" onClick={(e) => {
-        e.preventDefault();
-        const target = e.target;
-        const id = target.getAttribute("href")?.replace("#", "");
-        const element = document.getElementById(id);
-        element?.scrollIntoView({ behavior: "smooth" });
-    }}>
+    <div className="flex items-center space-x-20 text-2xl my-10 mr-5" >
         <p className=" text-slate-800 dark:text-slate-50"><NavLink to="/">KSDev.</NavLink></p>
     </div>
-    <div className="flex items-center lg:space-x-20 text-xl my-10 space-x-4  transition-all duration-1300 ease-in-out  justify-end" onClick={(e) => {
-        e.preventDefault();
-        const target = e.target;
-        const id = target.getAttribute("href")?.replace("#", "");
-        const element = document.getElementById(id);
-        element?.scrollIntoView({ behavior: "smooth" });
-    }}>
+    <div className="flex items-center lg:space-x-20 text-xl my-10 space-x-4  transition-all duration-1300 ease-in-out  justify-end" >
         <p className=" text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block"><NavLink to="/resume">RESUME</NavLink></p>
+        <p className=" text-slate-800 dark:text-slate-50 hidden font-sans font-semibold md:block"><NavLink to="/resume">PROJECTS</NavLink></p>
         <span className={` pt-2  ${isVisible ? 'hidden' : 'block'  }`}><DarkModeToggle/></span>
         <div className="flex space-x-2 z-[99999]">
  <motion.button
